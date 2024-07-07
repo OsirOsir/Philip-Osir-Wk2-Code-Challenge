@@ -12,14 +12,16 @@ Display Current Date => The application displays the current date at the top of 
 Clear List =>Click the -Clear List- button to remove all items from the shopping list.
 
 Technologies I used
+
 HTML
+
 CSS
+
 JavaScript
 
 To interact with it 
 You can run the application locally, by following these steps:
 
-To run the application locally on your machine, follow these steps:
 
 => Clone this repository to your local machine.
 => Navigate into the project directory.
