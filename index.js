@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+  let currentDate = new Date().toLocaleDateString('en-US', {
+    weekday: 'long', // This logs the weekday in a lonng format
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  // updates the content of the <p> tag with id="currentDate"
+  let currentDateElement = document.querySelector("#currentDate");
+  currentDateElement.textContent = `${currentDate}`;
+  
+  
+  
   let taskForm = document.addEventListener("submit", (e) =>{
     e.preventDefault();
     handleInput(e.target.inputArea.value);
@@ -7,12 +20,19 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
+let clearButton = document.querySelector("#clearList");
+clearButton.addEventListener("click", () => {
+  let shoppingArea = document.querySelector("#shopingListArea");
+  shoppingArea.innerHTML = "";
+})
+
 function handleInput(shopList) {
   let p = document.createElement("p")
-  p.style.fontSize = "20px";
+  p.style.fontSize = "20px"; // styles the p tag
   p.style.fontStyle = "italic";
   p.style.fontWeight = "bold";
-  let checkBox = document.createElement("input");
+  p.style.fontFamily = "arial"
+  let checkBox = document.createElement("input");  // targets the checkbx 
   checkBox.type="checkbox";
   checkBox.id = "myCheckbox";
   checkBox.style.marginLeft = "200px";
@@ -23,6 +43,7 @@ function handleInput(shopList) {
   document.querySelector("#shopingListArea").appendChild(p)
 }
 
-function chekMark(event) {
- console.log("", event.target.checked)
+function chekMark(event) {      // event function for the checkbox, to show checked 
+ return("", event.target)
+
 }
